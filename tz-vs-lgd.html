@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>唐子打赌小LIST</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d882b6c1-df16-4ac4-a72b-b14d96c79258" class="page sans"><header><img class="page-cover-image" src="%E5%94%90%E5%AD%90%E6%89%93%E8%B5%8C%E5%B0%8FLIST%20d882b6c1df164ac4a72bb14d96c79258/BB2F4FFC-55B5-417F-8B6F-1F8D3BE2012B.jpeg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🐶</span></div><h1 class="page-title">唐子打赌小LIST</h1></header><div class="page-body"><h2 id="181fd7fa-6dbc-471a-a7d4-043c86c15823" class="">唐子<code>3 : 3</code> 冠达</h2><hr id="c58cede0-be5e-4139-9eb2-14102f3df950"/><h3 id="a3adc1cc-37ac-44e9-8789-f70264de4d72" class="">8.27赌局</h3><ul id="865b1ce2-780a-4d73-90ae-e939238c268a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">唐子21:00会不会下班</span><blockquote id="586c5de2-0215-4931-b730-71dca7374725" class="">唐子：这班铁加了😩😩😩</blockquote><blockquote id="c0196941-2aef-41f9-995e-2f2fbcab3f90" class="">冠达：不用加班的～</blockquote><p id="a5f30e9a-fc21-4d42-9887-279c83d9e3c0" class=""><strong>结果：</strong>唐子赢了！<code>惨胜如败</code></p><p id="d409e9f2-a451-4632-a9de-841b4806b72c" class="">赌注：外卖盲盒（椰子冻）</p></li></ul><hr id="b0483a34-4e56-4d48-b852-c9b2197ce4a7"/><h3 id="c3df07b4-0123-49be-9503-650b3887904e" class="">8.28赌局</h3><ul id="82c0f272-963d-405c-95b2-c4cece3dd7fa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">冠达今天能不能运动超过2720步</span><blockquote id="8706d4d7-ab46-485f-ab1c-7c9df2efa083" class="">唐子：不可能超过好吧</blockquote><blockquote id="e770f68f-110c-4529-b4f1-f4c48263dca0" class="">冠达：没准就超过了呢🤡🤡🤡</blockquote><p id="03389840-dbcf-4459-b393-058e08355d0e" class=""><strong>结果：</strong>唐子赢麻了！<code>完胜</code></p><p id="9d12a638-9d80-41ee-9bd1-6f61c2b36995" class=""><strong>赌注：</strong>外卖盲盒（兑现了砂锅粥～）</p></li></ul><hr id="291e68ba-bcfc-4410-b6f2-25967c847e86"/><h3 id="1a8fed07-969f-4ff8-a0f7-f18147c1bd27" class="">8.29赌局</h3><ul id="e7a6ee23-c552-4ebf-8739-93f34f1a1a6e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">今天唐子的部门在通宵加班～卧槽了～怎么还TM通宵了！点了个开封菜夜宵。冠达问唐子最后还剩什么呢你猜？</span><blockquote id="7c16ef65-8534-42f5-abef-cd8385ea7b95" class="">冠达：还剩下鸡米花～</blockquote><blockquote id="d42919d0-3291-47c7-8a33-03c5eba6f12c" class="">唐子：剩下红豆派～</blockquote><p id="0ab0d815-8584-446b-8ab9-fbd86561d85a" class=""><strong>结果：</strong>剩下了奥尔良烤鸡翅～谁都没赢～或者说win-win了</p><p id="4cd46361-6101-4322-bfb3-315dace2f72e" class=""><strong>赌注：</strong>如果有机会去酒吧喝酒～输的买单！</p></li></ul><hr id="0735014a-2667-4914-85a5-83f0dd4c6a13"/><h3 id="f1f3a348-cbc8-4a26-abd1-19a10ab9c37f" class="">8.29赌局2.0</h3><ul id="ff2445d2-add9-4b02-96da-8acdbb7ef08e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><strong>冠达今晚是否能挽回声学调酒专家的声誉呢</strong></span><blockquote id="b6b144c4-3a7e-468f-8385-da2b5e664801" class="">冠达：“我今晚搞明白这个事情”</blockquote><blockquote id="5d78f720-5ae5-4efa-8e1a-cc15e63118b4" class="">唐子：傻傻应该要对自己的定位有清晰的认知</blockquote><p id="aaa66744-a72e-4a32-b5b8-4c736835ba83" class=""><strong>结果：</strong>冠达夺回了声学调酒专家的声誉并不是真正的傻傻了</p><figure id="fe4150d6-58c0-4b17-8638-f0c8a83fb9f6" class="link-to-page"><a href="https://www.notion.so/8-29-fe4150d658c04b178638f0c8a83fb9f6"><span class="icon">🍷</span>8.29杯子震动</a></figure><p id="68b55170-ce71-4602-a7c1-1dff115887d1" class=""><strong>赌注：</strong>大家的库存都不足了，谁输了给赢的人上货</p></li></ul><hr id="6a8e7bec-db8e-4c76-97d8-0f538fc79cd1"/><h3 id="64966a66-ff19-4ac8-87e0-ee80afcace25" class="">8.30赌局</h3><ul id="4646f4d2-faaa-442e-bb1f-d133ca2b0d25" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><strong>唐子能否打卡成功～得到属于自己的工资呢</strong></span><blockquote id="9de21f88-3dcc-450b-838c-55ffb4c3564f" class="">冠达：一定会打卡成功的～这事太离谱了～这么努力的员工我觉得发双倍都不过分！</blockquote><blockquote id="1500c1a0-b2eb-4db1-885f-8fee95c3c21c" class="">唐子：打卡会失败～成功损失四天工资～得到两天崩坏的作息～（<code>闻之者悲伤，见之者陨泪</code>）</blockquote><p id="80255c2d-13a0-4100-985f-525db124ab1b" class=""><strong>结果：成功打卡～</strong><code><strong>双赢</strong></code><strong>局面～</strong></p><p id="34d06793-d799-4d94-b753-eca5868d0b26" class=""><strong>赌注：如果唐子赢了，唐子想要什么呢（</strong><code><strong>傻傻觉得自己的黑照不值得两天的工资，那么想必调酒专家的私人鸡尾酒配方应该很值钱叭</strong></code><code><mark class="highlight-red"><strong>，一定要是很特别从来没见过但是要好喝的独家秘方谢谢宁</strong></mark></code><strong>），如果冠达赢了，冠达想要什么呢（</strong><code><strong>我觉得美少女的搞笑照片是值得两天的工资的，</strong></code><code><strong>签名黑照会不会有点过分～</strong></code><code><strong>确实有点过分了～还是讲故事吧</strong></code><strong>）</strong></p><p id="123b5157-4e6b-4c3c-8262-21c592b0ecfd" class="">唐子讲了他偶遇青山周平的故事！太有缘份了啊这也～就在商场就那么的遇到了～</p></li></ul><hr id="a83e1111-bdb7-4863-b62a-58540684082f"/><h3 id="c7928b14-a145-4585-a2af-7dee761e3c5e" class="">9月第一个周末：吾日三<mark class="highlight-red">省</mark>吾身，周末好好学习没！</h3><div id="8fdd41b2-4ab3-48b9-a43f-0351edc165ea" class="column-list"><div id="c1f904b3-061e-46e5-9d87-7a11d0023af1" style="width:50%" class="column"><ul id="9a47f56f-3c09-48d4-9c72-bda4a08a735c" class="bulleted-list"><li style="list-style-type:disc">唐子的周末学习计划</li></ul></div><div id="88c311fc-e644-4963-8038-49b1bc2c944b" style="width:50%" class="column"><ul id="e6685096-64cb-4d8f-944d-25aaf2cb91d0" class="bulleted-list"><li style="list-style-type:disc">傻傻的周末学习计划</li></ul></div></div><div id="57f59837-8c9a-4bf5-87b7-5a434f0dbe92" class="column-list"><div id="ad0ff075-227b-4e86-90ea-fb63fe80898d" style="width:50%" class="column"><ul id="1c9d9ef2-5bd0-42af-9fa5-af40f62d9b2b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">UE做一个属于自己的静态demo</span></li></ul></div><div id="6d862a5c-fb7f-4a95-8d10-526a2d7ea375" style="width:50%" class="column"><ul id="b7a659a9-efa7-46d2-93fb-3086fb382bae" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">课题相关：把Diffuse Rain和Stochastic Method的算法完全跑通，画图Demo完成，可以画出衰减曲线</span></li></ul></div></div><div id="7c2983d0-6d01-4ba4-ba5c-b2368a948eb0" class="column-list"><div id="17c56210-5219-426b-b681-3c7ce0401f5b" style="width:50%" class="column"><ul id="9f968c2a-24dd-47f0-977f-139238699f7b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">学会UE做视频的操作逻辑</span></li></ul></div><div id="d7468b2e-b5e6-4ecb-b523-85f59bee3ea3" style="width:50%" class="column"><ul id="887b910e-1f34-46a2-9536-5fb1b239ead2" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">工作相关：真的真的要改一版投建筑声学设计工作的简历了！拖了很久了！</span></li></ul></div></div><div id="77fdc097-95c7-4872-8985-9ea704d9f084" class="column-list"><div id="3e1eb9e5-184f-4fbe-bce1-149aeb96ff31" style="width:50%" class="column"><ul id="ce3fc074-3964-41ec-9503-0f11a559589e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">ppt里面搭出调研框架、讨论云调研的可行性并解决技术问题（POI热力图等）</span></li></ul><p id="29565020-cea1-4556-9f05-1996ed15d0a0" class="">
+</p></div><div id="a4ae86c3-50f4-4582-a7fd-e0950c200282" style="width:50%" class="column"><ul id="5133664e-4a2c-4d36-b559-23dacaab6f8d" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Web学习：先找到一个稳定的学习源并开始学习，（要有笔记为证），今天的demo只是看文档写的，至少可以在web上看到图片吧。</span></li></ul></div></div><p id="6d62f8d7-14e2-436f-b4ce-a9064665d5f4" class=""><strong>验收时间：</strong><code><strong>2022.9.4(Sun.) 22:00</strong></code></p><div id="8b5813da-2083-43af-8d48-bbbfe02cd046" class="column-list"><div id="8792d150-2cb2-49bb-92cb-fafe50bcc838" style="width:50%" class="column"><p id="40606b1f-fd09-4375-954a-4066abc47801" class=""><strong>唐子的奖励</strong>：我想要我想要让我想一想~我想要<strong><mark class="highlight-blue">建筑声学调酒专家亲自开发的独一无二的特调鸡尾酒（我要调好的哦~要宁亲手调制的哦）</mark></strong></p></div><div id="99554a3d-c9ce-4ecc-b887-6345f5635f6b" style="width:50%" class="column"><p id="aa5beefc-13be-4a0a-bdf1-7e640a0a59d3" class=""><strong>冠达的奖励</strong>：<mark class="highlight-orange"><strong>我想要美少女亲自做的咖啡哦～一定要是亲自哦～我还想亲自见证制作过程～听说还很有创意～我接受度很高～尽情来～</strong></mark></p><p id="7781badd-9369-4b71-bc04-e2ff1b07e6e5" class="">
+</p></div></div><hr id="64b3fbde-7a24-49da-b856-55bc0ebe882a"/><h3 id="7873632d-92c9-406b-b53c-db161107606f" class="">9.4不是赌局的bonus</h3><ul id="3c45cc3a-3552-46d1-82bb-4357d2ca31cd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>唐子一个临时起意的小求助</strong></span><p id="36e1aab8-b0fd-4d50-b03a-4575935e376f" class="">如果说，如果说傻傻能帮唐子爬一爬大众点评上的数据的话~~那么唐子就可以顺利实现为傻傻准备外卖盲盒的小愿望啦！！</p></li></ul><p id="73cda983-b582-4f60-a482-729187ea4c6b" class=""><strong>结果：（暂且期待一个双赢！）</strong></p><hr id="cde3fe04-5ecc-4f28-9d8d-63fe20b91ecb"/><h3 id="8e78e4a4-7751-4151-84ff-703a1f87aa0f" class="">九月份请求～</h3><ul id="bdf9a9c7-722a-498c-a0f0-d8099cde6239" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>冠达想请唐子监督</strong></span><p id="275bb0a4-e929-4b93-897e-d74b07878578" class=""><span class="user">@唐子 黄</span> </p><p id="2e214f26-66db-418d-9ef7-3e5c6c56198c" class="">9.5日夜，友人饮酒，酌酒甚多，饮时得意，醒来甚悔。是故，一日饮酒，两日浑噩，妄言胡话，甚是傻傻。我意已决，于重庆青女月，不再酗酒，可日饮一杯，望唐子监督！</p></li></ul><p id="1255f663-4541-47b9-9116-113a734161ec" class=""><strong>惩罚：这个好难想啊～</strong><code><strong>很多惩罚我想了～看似惩罚我～实则惩罚你～这不行～</strong></code><div class="indented"><ul id="47a17be1-98fa-4765-9a0f-39d711b0b7bd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">直播倒立？</span></li></ul><ul id="f63e125d-4b1c-4f3d-93a8-0d8c9e04f9f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">自拍丑照？</span></li></ul><ul id="82e8a51b-928f-4e9d-a07e-14eaf1cfcda3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">上货？</span></li></ul><ul id="f73d6078-0a41-4eff-9541-32923809e0f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">或者你还有什么想法咧</span></li></ul></div></p><hr id="84a63175-6465-4c8b-95d1-cfb37d2ef007"/><h3 id="05bba4c9-5c23-4e49-8097-8a17679eba13" class="">赌局<code>TODO</code></h3><ul id="aa30e207-c730-4f3b-af43-edbf1b8f3fc0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>冠达能否离开重庆找唐子玩。</strong></span><blockquote id="f4cc2865-f7d7-43b4-986e-60a3fdfd33f6" class="">冠达：冠达不能离开重庆。</blockquote><blockquote id="4900e735-37dc-4ba4-a44e-f5f837db7b24" class="">唐子：这边建议唐子选会～这样就能去深圳或者上海线下结算赌注</blockquote><p id="7cd85e11-4b12-4f50-b0b7-df0276b5a247" class="">
+</p><hr id="aa11a0b8-55c0-45fe-b53d-efc8b242545e"/></li></ul><h3 id="767ae301-b966-418c-8856-8f8c6becb6ce" class="">赌局<code>TODO</code></h3><ul id="3c3b3cdb-3a4a-42d2-bb50-8e0aef11303a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>唐子的导师十一之前会不会让唐子汇报论文进度呢</strong></span><blockquote id="49bbd925-4722-4fc1-bbee-96a19cb3f4e1" class="">唐子：怕是要面对惨痛的人生了</blockquote><blockquote id="d3ef86e8-822f-4093-918a-2c8e85135486" class="">冠达：这边建议冠达选不会并先准备好一个礼包</blockquote><p id="29691fb0-4e60-46bc-a1de-97f20092180a" class="">
+</p></li></ul></div></article></body></html>
